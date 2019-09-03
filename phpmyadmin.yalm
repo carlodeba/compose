@@ -13,8 +13,6 @@ services:
         - MYSQL_PASSWORD="tH3p@sSwD2
   web:
     image: carlodeba/phpmyadmin
-    depends_on:
-       - db
     container_name: test-phpmyadmin
     restart: always
     networks:
