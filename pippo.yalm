@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+   mariadb:
+     image: carlodeba/mariadb:latest
+     volumes:
+       - /var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: tHeRo0TpWd
+       MYSQL_DATABASE: theDatabase
+       MYSQL_USER: theUser
+       MYSQL_PASSWORD: tH3p@sSwD
+
+   phpmyadmin:
+     image: carlodeba/phpmyadmin:latest
+     ports:
+       - 8090:80
+     restart: always
+     environment:
+       PMA_HOST: mariadb
+       PMA_PORT: 3306
+
