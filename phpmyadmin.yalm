@@ -4,13 +4,13 @@ services:
      container_name: test-mariadb
      restart: always
      networks:
-     - test-net
+       - test-net
      environment:
-        - MYSQL_ROOT_PASSWORD="secret"
-        - MYSQL_ROOT_PASSWORD="tHeRo0TpWd2
-        - MYSQL_DATABASE="theDatabase2
-        - MYSQL_USER="theUser2
-        - MYSQL_PASSWORD="tH3p@sSwD2
+       - MYSQL_ROOT_PASSWORD="secret"
+       - MYSQL_ROOT_PASSWORD="tHeRo0TpWd2
+       - MYSQL_DATABASE="theDatabase2
+       - MYSQL_USER="theUser2
+       - MYSQL_PASSWORD="tH3p@sSwD2
   web:
     image: carlodeba/phpmyadmin
     container_name: test-phpmyadmin
