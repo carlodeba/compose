@@ -1,4 +1,4 @@
-version: 2
+services:
   mariadb:
      image: carlodeba/mariadb
      container_name: test-mariadb
