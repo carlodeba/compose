@@ -13,8 +13,6 @@ services:
   web:
     image: carlodeba/phpmyadmin
     restart: always
-    depends_on:
-      - db
     networks:
       - test-net
     environment:
