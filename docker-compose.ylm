@@ -2,8 +2,6 @@ services:
   db:
     image: carlodeba/mariadb
     restart: always
-    networks:
-      - test-net
     environment:
       - MYSQL_ROOT_PASSWORD="secret"
       - MYSQL_ROOT_PASSWORD="tHeRo0TpWd2
@@ -13,8 +11,6 @@ services:
   web:
     image: carlodeba/phpmyadmin
     restart: always
-    networks:
-      - test-net
     environment:
         - PMA_HOST test-mariadb
         - PMA_PORT 3306
