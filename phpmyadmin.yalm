@@ -18,8 +18,8 @@ services:
        - 8080:80
      restart: always
      environment:
-       PMA_HOST test-mariadb
-       PMA_PORT 3306
+       PMA_HOST: test-mariadb
+       PMA_PORT: 3306
 
 volumes:
     mariadb_data:
