@@ -1,5 +1,5 @@
 services:
-  mariadb:
+  db:
      image: carlodeba/mariadb
      container_name: test-mariadb
      restart: always
@@ -11,10 +11,10 @@ services:
         - MYSQL_DATABASE="theDatabase2
         - MYSQL_USER="theUser2
         - MYSQL_PASSWORD="tH3p@sSwD2
-  phpmyadmin:
+  web:
     image: carlodeba/phpmyadmin
     depends_on:
-       - mariadb
+       - db
     container_name: test-phpmyadmin
     restart: always
     networks:
