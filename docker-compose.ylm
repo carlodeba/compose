@@ -1,7 +1,6 @@
 services:
   db:
     image: carlodeba/mariadb
-    container_name: test-mariadb
     restart: always
     networks:
       - test-net
@@ -13,7 +12,6 @@ services:
       - MYSQL_PASSWORD="tH3p@sSwD2
   web:
     image: carlodeba/phpmyadmin
-    container_name: test-phpmyadmin
     restart: always
     depends_on:
       - db
