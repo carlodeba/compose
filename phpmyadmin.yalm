@@ -15,8 +15,10 @@ services:
     image: carlodeba/phpmyadmin
     container_name: test-phpmyadmin
     restart: always
+    depends_on:
+      - db
     networks:
-     - test-net
+      - test-net
     environment:
         - PMA_HOST test-mariadb
         - PMA_PORT 3306
