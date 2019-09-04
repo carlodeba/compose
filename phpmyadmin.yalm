@@ -8,10 +8,10 @@ services:
        - /var/lib/mysql
      restart: always
      environment:
-       MYSQL_ROOT_PASSWORD: tHeRo0TpWd
-       MYSQL_DATABASE: theDatabase
-       MYSQL_USER: theUser
-       MYSQL_PASSWORD: tH3p@sSwD
+       MYSQL_ROOT_PASSWORD: ${LAMP_MYSQL_ROOT_PASSWORD}
+       MYSQL_DATABASE: ${LAMP_MYSQL_DATABASE}
+       MYSQL_USER: ${LAMP_MYSQL_USER}
+       MYSQL_PASSWORD: ${LAMP_MYSQL_PASSWORD}
 
    phpmyadmin:
      image: carlodeba/phpmyadmin:latest
