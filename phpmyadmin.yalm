@@ -6,6 +6,7 @@ services:
      container_name: LAMP-mariadb
      volumes:
        - /var/lib/mysql
+       - /var/backups
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: ${LAMP_MYSQL_ROOT_PASSWORD}
