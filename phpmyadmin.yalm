@@ -2,7 +2,7 @@ version: '2'
 
 services:
    mariadb:
-     image: carlodeba/mariadb:latest
+     image: carlodeba/mariadb-mdc:latest
      container_name: LAMP-mariadb
      volumes:
        - /var/lib/mysql
