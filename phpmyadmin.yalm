@@ -5,8 +5,8 @@ services:
      image: carlodeba/mariadb-mdc:latest
      container_name: ${LAMP_LE_VIRTUAL_HOST}-mariadb
      volumes:
-       - ${LAMP_LE_VIRTUAL_HOST}_mysql:/var/lib/mysql
-       - ${LAMP_LE_VIRTUAL_HOST}_backup:/var/backups
+       - ${APP_NAME}_mysql:/var/lib/mysql
+       - ${APP_NAME}_backup:/var/backups
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: ${LAMP_MYSQL_ROOT_PASSWORD}
