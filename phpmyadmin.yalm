@@ -3,9 +3,10 @@ version: '2'
 services:
    mariadb:
      image: carlodeba/mariadb-mdc:latest
+     container_name: ${LAMP_LE_VIRTUAL_HOST}-mariadb
      volumes:
-       - ${LAMP_DOMAIN_NAME}Mysql:/var/lib/mysql
-       - ${LAMP_DOMAIN_NAME}Backup:/var/backups
+       - ${LAMP_LE_VIRTUAL_HOST}_mysql:/var/lib/mysql
+       - ${LAMP_LE_VIRTUAL_HOST}_backup:/var/backups
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: ${LAMP_MYSQL_ROOT_PASSWORD}
@@ -15,6 +16,7 @@ services:
 
    phpmyadmin:
      image: carlodeba/phpmyadmin:latest
+     container_name: ${LAMP_LE_VIRTUAL_HOST}-phpmyadmin
      ports:
        - 80
      restart: always
@@ -22,5 +24,5 @@ services:
        PMA_HOST: mariadb
        PMA_PORT: 3306
        VIRTUAL_HOST: ${LAMP_VIRTUAL_HOST}
-       LETSENCRYPT_HOST: ${LAMP_VIRTUAL_HOST}
+       LETSENCRYPT_HOST: ${LAMP_LE_VIRTUAL_HOST}
        LETSENCRYPT_EMAIL: ${LAMP_LE_EMAIL}
